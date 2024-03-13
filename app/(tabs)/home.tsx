@@ -14,7 +14,7 @@ export default function Home() {
             <Pressable onPress={() => {
                 setPlayer((prevPlayer) => ({
                 ...prevPlayer,
-                gps: prevPlayer.gps + 100,
+                gps: prevPlayer.gps + 1000000,
                 }));
                 console.log(player.gps + 1000); // This will print the updated value (200)
             }}>

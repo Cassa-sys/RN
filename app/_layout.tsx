@@ -1,5 +1,6 @@
 import { Stack } from 'expo-router';
 import { createContext, useEffect, useRef, useState } from 'react';
+import { Appearance } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const getData = async () => {
@@ -15,7 +16,7 @@ var defaultPlayer = {
   gps: 0,
   buildings: [0,0,0,0,0,0,0],
   buildingsGoldPerSecond: [1, 3, 5, 10, 50, 100, 1000, 10000],
-  upgradesOwned: [0,0,0,0,0,0,0,0,0,0],
+  upgradesOwned: [0,0,0,0,0,0,0,0,0,0, 0,0,0,0,0,0,0,0,0,0],
 }
 
 
@@ -48,6 +49,7 @@ const stack = () => {
     return () => cancelAnimationFrame(frameId)
   }, []);
 
+  // Appearance.setColorScheme('dark');
   return (
     <Player.Provider value={{player, setPlayer} as any}>
       <Stack>
