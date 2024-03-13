@@ -4,10 +4,12 @@ const styles = StyleSheet.create({
     container: {
         backgroundColor: "#44475a",
         flex: 1,
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        flexBasis: "auto",
-        justifyContent: 'space-between',
+        // flexDirection: 'row',
+        // flexWrap: 'wrap',
+        // flexBasis: "auto",
+        // justifyContent: 'space-between',
+        // //center
+        alignItems: 'center',
     },
     text: {
         color:"#f8f8f2"

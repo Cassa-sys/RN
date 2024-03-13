@@ -5,10 +5,14 @@ import { Player } from '../_layout';
 const screenWidth = Dimensions.get('window').width;
 const screenHeight = Dimensions.get('window').height;
 const itemWidth = screenWidth/3;
+
 const Upgrades = () => {
     const { player, setPlayer } = useContext(Player);
-    const [upgrades, setUpgrades] = useState([
-        { id: 0, name: "Test Upgrade", cost: 100, effect: () => { }, max: 10, description: "This is a test upgrade" },
+    const upgrades = [
+        { id: 0, name: "Test Upgrade", cost: 100, effect: () => {setPlayer((prevPlayer) => ({
+            ...prevPlayer,
+            goldPerClick: prevPlayer.goldPerClick + 10,
+        }));}, max: 10, description: "Increase your gold per click" },
         { id: 1, name: "Test Upgrade 2", cost: 1000, effect: () => { }, max: 10, description: "This is another test upgrade" },
         { id: 2, name: "Test Upgrade 3", cost: 500, effect: () => { }, max: 5, description: "This is a third test upgrade" },
         { id: 3, name: "Test Upgrade 4", cost: 2000, effect: () => { }, max: 8, description: "This is a fourth test upgrade" },
@@ -28,7 +32,7 @@ const Upgrades = () => {
         { id: 17, name: "Test Upgrade 18", cost: 500000000, effect: () => { }, max: 3, description: "This is an eighteenth test upgrade" },
         { id: 18, name: "Test Upgrade 19", cost: 1000000000, effect: () => { }, max: 2, description: "This is a nineteenth test upgrade" },
         { id: 19, name: "Test Upgrade 20", cost: 2000000000, effect: () => { }, max: 4, description: "This is a twentieth test upgrade" },
-    ]);
+    ];
 
     const upgradeFn = (upgrade) => {
         if (player.gold >= upgrade.cost) {

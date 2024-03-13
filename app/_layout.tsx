@@ -12,7 +12,8 @@ const getData = async () => {
     }
 };
 var defaultPlayer = {
-  gold: 0,
+  gold: 10,
+  goldPerClick: 1,
   gps: 0,
   buildings: [0,0,0,0,0,0,0],
   buildingsGoldPerSecond: [1, 3, 5, 10, 50, 100, 1000, 10000],
